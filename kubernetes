@@ -1,0 +1,136 @@
+
+# ---------- Session 1------------------
+What is Kubernetes
+What is Container Orchestration Engine
+Why do we need Kubernetes
+
+Kubernetes is the Greek word for helmsman or captain of a ship
+Kubernetes is also referred to as k8s, as there are 8 characters between k and s
+
+container management (orchestration) tool
+developed by Google lab (& later donated to CNCF)
+open source
+written on Golang
+also called K8s
+
+Container Management / Orchestration tool
+Container Orchestration tool or engine automates deploying, scaling and managing the containerized application on a group of servers
+e.g.
+Kubernetes
+Docker Swarm
+Apache Mesos Marathon
+
+Docker is a tool designed to make it easier to deploy and run applications by using containers
+
+Organizations have to use multiple containers to
+Ensure availability
+Load balancing
+Scale-up and down based on user load
+
+deploying
+scheduling
+scaling
+load balancing
+batch execution
+rollbacks
+monitoring
+
+# ---------- Session 2 Features of K8s ------------------
+
+Docker - creates containers
+Kubernetes - manages containers
+Objective - learn:
+Automatic bin packing
+Service discovery & load balancing
+Storage orchestration
+Self-healing
+
+Automatic bin packing
+Automatically places containers based on their resource requirements 
+like CPU & Memory (RAM), 
+while not sacrificing availability
+Saves resources
+
+Service discover & load balancing
+Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them
+With this system, Kubernetes has control over network and communication between pods and can load load balance across them
+
+Storage Orchestration
+Kubernetes allows to mount the storage system of your choice
+Local
+Cloud (AWS)
+Network (NFS)
+
+Self-healing
+If a container fails - restarts container
+If node dies - replaces and reschedule containers on other nodes
+If container does not respond to user defined health check - kills container
+This is taken care by Kubernetes  ReplicationController
+
+# ---------- Session 3 Kubernetes Beginner Tutorial 3 | Features of Kubernetes - Part 2 ------------------
+
+Today we will learn these features:
+Automated rollouts and rollbacks
+Secret & configuration management
+Batch execution
+Horizontal scaling
+
+Secret & configuration management
+Kubernetes manages secrets and configuration details for an application separately from the container image,
+Deploy and update secrets and application configuration without rebuilding your image and without exposing secrets in your stack configuration.
+
+Automated rollouts and rollbacks
+Rollout: deploy changes to the application or its configuration
+Rollback: revert the changes & restore to the previous state
+Kubernetes ensures there is no downtime during this process
+
+Batch execution
+Kubernetes supports batch execution, long-running jobs, and replaces failed containers
+
+Horizontal scaling
+In Kubernetes, we can scale up or down the containers 
+ - using commands
+ - from the dashboard (kubernetes ui)
+ - automatically based on CPU usage
+ 
+# ------------- Kubernetes Beginner Tutorial 4 | Basic Architecture of Kubernetes - Part 1 -------------
+
+An overview of Kubernetes components
+The basic architecture of Kubernetes
+What is Master, Worker, Pods, Cluster
+#KubernetesBeginnerTutorials
+When you deploy Kubernetes, you get a cluster
+A cluster is a set of machines, called nodes
+A cluster has at least one worker node and at least one master node
+
+In earlier days of Kubernetes, worker nodes were called minions
+In Kubernetes, every cluster has at least one master node and at least one worker node
+There can be more than one master nodes in a cluster to provide a cluster with failover and high availability
+There can be multiple clusters in Kubernetes architecture
+
+The worker node(s) host the pods that are the components of the application
+The master node(s) manages the worker nodes and the pods in the cluster
+
+In a Cluster Kubernetes supports:
+ No more than 5000 nodes
+ No more than 150000 total pods
+ No more than 300000 total containers
+ No more than 100 pods per node
+
+
+# -- Kubernetes Beginner Tutorial 5 | Basic Architecture of Kubernetes - Part 2 ------
+
+4 Components of Master node
+API Server - for all communications ( JSON over HTTP API)
+Scheduler - schedules pods on nodes
+Controller Manager - runs controllers
+Etcd - open source, distributed key-value database from CoreOS
+
+3 Components of Worker node
+kubelet
+kube-proxy
+Container runtime
+
+Addons for DNS, Dashboard, monitoring, logging etc
+
+# ------
